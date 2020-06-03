@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<link>
+<head>
     <meta charset="UTF-8"/>
-     <title th:text="#{index.page.title}">Page title</title>
+<!--    <title th:text="#{index.page.title}">Page title</title>-->
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"
           th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
 
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
 
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
-<!--            th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>-->
-
     <link th:href="@{/css/styles.css}" rel="stylesheet" media="screen"/>
-
     <style th:remove="all">
         .jumbotron {
-            background: url('../static/images/SpringCoreJumbotron.jpg') no-repeat center center;
+            background: url('../../static/images/SpringCoreJumbotron.jpg') no-repeat center center;
             height: 350px;
             color: white;
             text-shadow: #444 0 1px 1px;
@@ -133,62 +129,7 @@
     </style>
 </head>
 <body>
-<div class="jumbotron" th:replace="fragments/jumbotron.html :: jumbotron">
-    <div class="container">
-        <h1>Spring Framework Guru</h1>
-        <p class="lead" th:text="#{index.courses.tagline}">Online course for Spring Framework</p>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 th:text="${product.courseName}">Spring Framework Guru - Course Name</h1>
-        </div>
-    </div>
-
-    <div class="course-listing">
-        <div class="row">
-            <div class="col-md-6" >
-                <div style="margin: 5px; width: 506px; height: 290px;">
-                    <img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
-                         th:src="@{/images/SpringCoreThumb.png}"/>
-                </div>
-                <div class="row" style="margin: 5px; width: 506px;">
-                    <div class="col-md-6" >
-                        <img align="left" alt="John Thompson"
-                             src="../static/images/instructor_jt.jpg"
-                             class="img-circle"
-                             th:src="@{/images/instructor_jt.jpg}">
-                        <h5 style="padding-left: 40px" th:text="${product.author.firstName + ' ' + product.author.lastName}">Author Name</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 style="text-align: right;" th:text="${product.price > 0 ? ('$ ' + product.price) : 'FREE'}"> Price</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div style="margin: 5px;">
-                    <h2 th:text="${product.courseSubtitle}">Course title</h2>
-                    <p th:text="${product.courseDescription}" style="padding-right: 10px;">A product description is the marketing copy used to describe a product's value proposition to potential customers. A compelling product description provides customers with details around features, problems it solves and other benefits to help generate a sale. ... A “good” product description will not do.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-6">
-            <button type="button" class="btn btn-primary" th:text="#{button.buy.now}">Buy Now!</button>
-        </div>
-    </div>
-
-
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<div class="container" th:replace="fragments/footer.html :: footer">
+<div class="container" th:fragment="footer">
     <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
             <p class="navbar-text pull-left">@2016 - Spring Framework</p>

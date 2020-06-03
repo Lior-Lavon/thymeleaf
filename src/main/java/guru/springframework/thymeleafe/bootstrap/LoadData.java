@@ -38,7 +38,7 @@ public class LoadData implements CommandLineRunner {
 
     private void LoadAuthor(){
 
-        Author author1 = Author.builder().firstName("John").lastName("Thompson").build();
+        Author author1 = Author.builder().firstName("John").lastName("Thompson").image("instructor_jt.jpg").build();
 
         authorRepository.save(author1);
 
@@ -120,7 +120,7 @@ public class LoadData implements CommandLineRunner {
         springCoreAdv.setAuthor(jt);
         springCoreAdv.setCourseDescription("Why would you want to learn about the Spring Framework? Simple, Spring is the most widely used framework in the enterprise today. Major companies all over the world are hiring programmers who know the Spring Framework.");
         springCoreAdv.setPrice(new BigDecimal("199"));
-        springCoreAdv.setImageUrl("SpringCoreAdvanced.png");
+        springCoreAdv.setImageUrl("SpringCoreAdvancedThumb.png");
         springCoreAdv.getProductCategories().add(springCoreCat);
         springCoreAdv.getProductCategories().add(springBootCat);
         productRepository.save(springCoreAdv);
@@ -131,7 +131,7 @@ public class LoadData implements CommandLineRunner {
         springCoreDevOps.setAuthor(jt);
         springCoreDevOps.setCourseDescription("Why would you want to learn about the Spring Framework? Simple, Spring is the most widely used framework in the enterprise today. Major companies all over the world are hiring programmers who know the Spring Framework.");
         springCoreDevOps.setPrice(new BigDecimal("199"));
-        springCoreDevOps.setImageUrl("SpringCoreDevOps.png");
+        springCoreDevOps.setImageUrl("SpringCoreDevOpsThumb.png");
         springCoreDevOps.getProductCategories().add(springCoreCat);
         springCoreDevOps.getProductCategories().add(springBootCat);
         productRepository.save(springCoreDevOps);

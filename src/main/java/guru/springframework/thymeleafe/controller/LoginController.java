@@ -19,8 +19,14 @@ public class LoginController {
         return "loginform";
     }
 
+    @GetMapping("logout-success")
+    public String youLoggedOut(){
+        // redirected from SpringSecurityConfig.java
+        return "logout-success";
+    }
+
     @PostMapping("/login")
-    public String login(@Valid LoginDTO loginDTO, BindingResult bindingResult){
+    public String login(BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
             return "loginform";

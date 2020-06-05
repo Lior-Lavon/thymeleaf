@@ -15,7 +15,7 @@ public class LoginDTO {
 
     @NotEmpty
 //    @Size(min=2 , max = 8)
-    private String userName;
+    private String username;
 
     @NotEmpty
 //    @Size(min=2 , max = 8)

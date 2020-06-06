@@ -21,7 +21,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication()
                 .withUser("user").password(passwordEncoder().encode("user")).roles("USER")
                 .and()
-                .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
+                .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN", "USER");
     }
 
     //    How to set a password encoder ?

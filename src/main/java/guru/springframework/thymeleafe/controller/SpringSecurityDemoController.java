@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SpringSecurityDemoController {
 
-    @GetMapping("/securitydemo")
+    @GetMapping("/secured")
     public String getSecurityDemo(){
 
         return "spring-security-info";
